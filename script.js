@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (gridCargos) {
         const miembros = [
-            { nombre: "Hna. Brillet Pérez", cargo: "Directora General", mensaje: "Comprometidos con la enseñanza bíblica.", foto: "img/miembros/director.jpg" },
+            { nombre: "Hna. Brillet Pérez", cargo: "Directora General", mensaje: "Comprometidos con la enseñanza bíblica.", foto: "brilletperez.jpg" },
             { nombre: "Hna. Darinde Medina", cargo: "Directora de Programa", mensaje: "Administrando con fidelidad.", foto: "img/miembros/tesorero.jpg" },
             { nombre: "Hno. Moisés Canepa", cargo: "Multimedia / Publicidad", mensaje: "Llevando el evangelio a las naciones.", foto: "img/miembros/multimedia.jpg" },
             { nombre: "Hna. Mariana Poot", cargo: "Tesorera", mensaje: "Adorando al Rey con excelencia.", foto: "img/miembros/coreografia.jpg" }
