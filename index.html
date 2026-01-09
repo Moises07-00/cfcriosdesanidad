@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iglesia Ríos de Sanidad</title>
+    <title>Iglesia Ríos de Sanidad - Equipo</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container header-content">
-			<img src="https://drive.google.com/file/d/1fgfyqu7GuVsCv6I7CbBPqodgD1kssU79/view?usp=drivesdk" 
-			     alt="Logo Iglesia Ríos de Sanidad" 
-			     class="logo">
+            <img src="img/logo.png" alt="Logo" class="logo">
             <div class="title-wrapper">
                 <h1>Iglesia Ríos de Sanidad</h1>
                 <p>Sirviendo al Señor con alegría</p>
@@ -31,55 +29,9 @@
     </nav>
 
     <main class="container">
-        <section class="form-section">
-            <h2>Postularse a un Cargo de Servicio</h2>
-            <form id="postulacionForm">
-                <div class="form-group">
-                    <label for="foto">Foto de perfil *</label>
-                    <input type="file" id="foto" accept="image/*" required>
-                    <div id="preview-container">
-                        <img id="preview" src="" alt="Vista previa de tu foto">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="nombre">Nombre completo *</label>
-                    <input type="text" id="nombre" placeholder="Ej: Juan Pérez Gómez" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="telefono">Teléfono *</label>
-                    <input type="tel" id="telefono" placeholder="Ej: +56 9 1234 5678" required>
-                </div>
-
-				<div class="form-group">
-				    <label for="cargo">Cargo al que desea postularse *</label>
-				    <select id="cargo" required>
-				        <option value="">Seleccione un cargo</option>
-				        <option value="Director(a)">Director(a)</option>
-				        <option value="Director(a) de programas">Director(a) de programas</option>
-				        <option value="Tesorero(a)">Tesorero(a)</option>
-				        <option value="Multimedia / Publicidad">Multimedia / Publicidad</option>
-				        <option value="Coreografía">Coreografía</option>
-				        <option value="Promoción Espiritual">Promoción Espiritual</option>
-				        <option value="Cocina">Cocina</option>
-				        <option value="Otro">Otro</option>
-				    </select>
-				</div>
-
-                <div class="form-group">
-                    <label for="motivo">Motivo por el cual desea este cargo *</label>
-                    <textarea id="motivo" rows="5" placeholder="Explique brevemente su llamado y deseo de servir..." required></textarea>
-                </div>
-
-                <button type="submit" id="submitBtn">Enviar Postulación</button>
-            </form>
-        </section>
-
-        <section class="postulaciones-section">
-            <h2>Postulaciones Recibidas</h2>
-            <div id="postulaciones-list" class="postulaciones-list"></div>
-            <p class="note">Nota: Estas postulaciones se guardan solo en su navegador. Para un sistema real, se necesitaría un servidor.</p>
+        <section class="admin-section">
+            <h2>Cuerpo Administrativo EBDV 2026</h2>
+            <div class="admin-grid" id="grid-cargos"></div>
         </section>
     </main>
 
@@ -89,15 +41,6 @@
         </div>
     </footer>
 
-    <div id="loaderOverlay" class="loader-overlay">
-        <div class="loader"></div>
-    </div>
-
-    <div id="successMessage" class="success-message">
-        <p>Hemos recibido tu postulación.<br><strong>Dios te bendiga.</strong></p>
-    </div>
-
     <script src="script.js"></script>
 </body>
-
 </html>
