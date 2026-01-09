@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso - Ríos de Sanidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <header class="login-header">
+            <img src="img/logo.png" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/90'">
+            <h1>Ríos de Sanidad</h1>
+            <p>EBDV 2026</p>
+        </header>
+
+        <div id="box-login" class="auth-box">
+            <h2>Iniciar Sesión</h2>
+            <form id="formLogin">
+                <input type="email" id="logEmail" placeholder="Correo Electrónico" required>
+                <input type="password" id="logPass" placeholder="Contraseña (4 números)" maxlength="4" required>
+                <button type="submit" class="btn-auth">Entrar</button>
+            </form>
+            <p class="toggle-text">¿No tienes cuenta? <a href="#" id="toRegister">Regístrate aquí</a></p>
+        </div>
+
+        <div id="box-register" class="auth-box" style="display: none;">
+            <h2>Crear Cuenta</h2>
+            <form id="formRegister">
+                <input type="text" id="regNombre" placeholder="Nombre Completo" required>
+                <input type="tel" id="regTel" placeholder="Teléfono" required>
+                <input type="email" id="regEmail" placeholder="Correo Electrónico" required>
+                <input type="password" id="regPass" placeholder="Contraseña (4 números)" maxlength="4" required>
+                <button type="submit" class="btn-auth">Registrarse</button>
+            </form>
+            <p class="toggle-text">¿Ya tienes cuenta? <a href="#" id="toLogin">Inicia sesión</a></p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDtFSb6Y6oLmEmF33s-eKjok158REglyu8",
+            authDomain: "riosdesanidad.firebaseapp.com",
+            projectId: "riosdesanidad",
+            storageBucket: "riosdesanidad.firebasestorage.app",
+            messagingSenderId: "97497718412",
+            appId: "1:97497718412:web:938e9211f96b081f6ee5a9"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Cambio de vistas
+        document.getElementById('toRegister').onclick = () => { document.getElementById('box-login').style.display='none'; document.getElementById('box-register').style.display='block'; };
+        document.getElementById('toLogin').onclick = () => { document.getElementById('box-register').style.display='none'; document.getElementById('box-login').style.display='block'; };
+
+        // Registro en Firebase
+        document.getElementById('formRegister').onsubmit = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('regEmail').value;
+            const pass = "rios" + document.getElementById('regPass').value;
+            try {
+                const res = await createUserWithEmailAndPassword(auth, email, pass);
+                await setDoc(doc(db, "usuarios", res.user.uid), {
+                    nombre: document.getElementById('regNombre').value,
+                    telefono: document.getElementById('regTel').value,
+                    email: email
+                });
+                window.location.href = "index.html";
+            } catch (err) { alert("Error: " + err.message); }
+        };
+
+        // Login en Firebase
+        document.getElementById('formLogin').onsubmit = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('logEmail').value;
+            const pass = "rios" + document.getElementById('logPass').value;
+            try {
+                await signInWithEmailAndPassword(auth, email, pass);
+                window.location.href = "index.html";
+            } catch (err) { alert("Datos incorrectos"); }
+        };
+    </script>
+</body>
+</html>

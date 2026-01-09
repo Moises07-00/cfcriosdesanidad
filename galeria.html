@@ -3,55 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería - Iglesia Ríos de Sanidad</title>
+    <title>Galería - Ríos de Sanidad</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <img src="logo.png" alt="Logo" class="logo">
-            <div class="title-wrapper">
-                <h1>Iglesia Ríos de Sanidad</h1>
-                <p>Sirviendo al Señor con alegría</p>
-            </div>
-        </div>
-    </header>
-
+    <header><div class="container"><h1>Galería de Fotos</h1></div></header>
     <nav class="navbar">
-        <div class="container nav-container">
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="galeria.html" class="nav-link active">Galería</a></li>
-                <li><a href="eventos.html" class="nav-link">Eventos</a></li>
-            </ul>
-        </div>
+        <ul class="nav-menu container">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="galeria.html" class="nav-link active">Galería</a></li>
+            <li><a href="eventos.html" class="nav-link">Eventos</a></li>
+            <li><a href="#" class="nav-link" id="btnLogout">Salir</a></li>
+        </ul>
     </nav>
 
     <main class="container">
-        <section class="admin-section">
-            <h2>Recuerdos de Nuestros Eventos</h2>
-            <p class="intro-text">Un vistazo a cómo Dios se ha movido en medio nuestro en los últimos tiempos.</p>
-            
-            <div id="gallery-container"></div>
-        </section>
+        <div id="gallery-container"></div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Iglesia Ríos de Sanidad. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-    
     <div id="modal-galeria" class="modal">
-        <span class="cerrar-modal">&times;</span>
-        <img class="modal-contenido" id="img-grande">
+        <img id="img-grande" class="modal-contenido">
     </div>
 
-    <script src="script.js"></script>
-</body>
-
-
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

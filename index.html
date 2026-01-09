@@ -3,44 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iglesia Ríos de Sanidad - Equipo</title>
+    <title>Inicio - Ríos de Sanidad</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="container header-content">
-            <img src="logo.png" alt="Logo" class="logo">
-            <div class="title-wrapper">
-                <h1>Iglesia Ríos de Sanidad</h1>
-                <p>Sirviendo al Señor con alegría</p>
-            </div>
+        <div class="container">
+            <img src="img/logo.png" alt="Logo" class="logo" onerror="this.src='https://via.placeholder.com/90'">
+            <h1>Iglesia Ríos de Sanidad</h1>
+            <p>Equipo Administrativo EBDV 2026</p>
         </div>
     </header>
 
     <nav class="navbar">
-        <div class="container nav-container">
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Inicio</a></li>
-                <li><a href="galeria.html" class="nav-link">Galería</a></li>
-                <li><a href="eventos.html" class="nav-link">Eventos</a></li>
-            </ul>
-        </div>
+        <ul class="nav-menu container">
+            <li><a href="index.html" class="nav-link active">Inicio</a></li>
+            <li><a href="galeria.html" class="nav-link">Galería</a></li>
+            <li><a href="eventos.html" class="nav-link">Eventos</a></li>
+            <li><a href="#" class="nav-link" id="btnLogout">Salir</a></li>
+        </ul>
     </nav>
 
     <main class="container">
         <section class="admin-section">
-            <h2>Cuerpo Administrativo EBDV 2026</h2>
-            <div class="admin-grid" id="grid-cargos"></div>
+            <h2>Cuerpo Directivo</h2>
+            <div id="grid-cargos" class="admin-grid"></div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Iglesia Ríos de Sanidad. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
