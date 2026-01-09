@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (gridCargos) {
         const miembros = [
-            { nombre: "Hna. Brillet Pérez", cargo: "Directora General", mensaje: "Comprometidos con la enseñanza bíblica.", foto: "brilletperez.jpg" },
+            { nombre: "Hna. Brillet Pérez", cargo: "Directora General", mensaje: "Comprometidos con la enseñanza bíblica.", foto: "img/brilletperez.jpg" },
             { nombre: "Hna. Darinde Medina", cargo: "Directora de Programa", mensaje: "Administrando con fidelidad.", foto: "img/miembros/tesorero.jpg" },
-            { nombre: "Hno. Moisés Canepa", cargo: "Multimedia / Publicidad", mensaje: "Llevando el evangelio a las naciones.", foto: "moisescanepa.jpg" },
+            { nombre: "Hno. Moisés Canepa", cargo: "Multimedia / Publicidad", mensaje: "Llevando el evangelio a las naciones.", foto: "img/moisescanepa.jpg" },
             { nombre: "Hna. Mariana Poot", cargo: "Tesorera", mensaje: "Adorando al Rey con excelencia.", foto: "img/miembros/coreografia.jpg" }
         ];
 
@@ -33,11 +33,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (galleryContainer) {
         const eventosPasados = [
-            { titulo: "Servicio Fin de Año", fecha: "Diciembre 2025", fotos: Array(15).fill("https://via.placeholder.com/300x200?text=Campaña") },
-            { titulo: "Servicio Navideño", fecha: "Diciembre 2025", fotos: Array(15).fill("https://via.placeholder.com/300x200?text=Aniversario") },
-            { titulo: "EBDV 2025", fecha: "Julio 2025", fotos: Array(15).fill("https://via.placeholder.com/300x200?text=EBDV") },
-            { titulo: "Vigilia Unida", fecha: "Mayo 2025", fotos: Array(15).fill("https://via.placeholder.com/300x200?text=Vigilia") },
-            { titulo: "Día de la Familia", fecha: "Marzo 2025", fotos: Array(15).fill("https://via.placeholder.com/300x200?text=Familia") }
+        
+             {
+                titulo: "Servicio Fin De Año",
+                fecha: "28 Diciembre 2025",
+                // Tus fotos reales deben estar en tu carpeta de imágenes
+                fotos: [
+                    "img/campana2025/foto1.jpg",
+                    "img/campana2025/foto2.jpg",
+                    "img/campana2025/pastor-predicando.jpg",
+                    // ... hasta 15 fotos
+                    "img/campana2025/foto15.jpg"
+                ]
+            },
+            
+            {
+                titulo: "Servicio Navideño",
+                fecha: "21 Diciembre 2025",
+                // Tus fotos reales deben estar en tu carpeta de imágenes
+                fotos: [
+                    "img/servicio211225/01sn.jpg",
+                    "img/servicio211225/02sn.jpg",
+                    "img/servicio211225/03sn.jpg",
+                    "img/servicio211225/04sn.jpg",
+                    "img/servicio211225/05sn.jpg",
+                    "img/servicio211225/06sn.jpg",
+                    "img/servicio211225/07sn.jpg",
+                    "img/servicio211225/08sn.jpg",
+                    "img/servicio211225/09sn.jpg",
+                    "img/servicio211225/10sn.jpg",
+                    "img/servicio211225/11sn.jpg",
+                    "img/servicio211225/12sn.jpg",
+                    "img/servicio211225/13sn.jpg",
+                    "img/servicio211225/14sn.jpg",
+                    "img/servicio211225/15sn.jpg",
+                    "img/servicio211225/16sn.jpg",
+                    "img/servicio211225/17sn.jpg",
+                    "img/servicio211225/18sn.jpg",
+                    "img/servicio211225/19sn.jpg",
+                    "img/servicio211225/20sn.jpg",
+                    // ... hasta 20 fotos
+                ]
+            },
+            
+            {
+                titulo: "Noche Mexicana",
+                fecha: "14 Septiembre 2025",
+                // Tus fotos reales deben estar en tu carpeta de imágenes
+                fotos: [
+                    "img/campana2025/foto1.jpg",
+                    "img/campana2025/foto2.jpg",
+                    "img/campana2025/pastor-predicando.jpg",
+                    // ... hasta 15 fotos
+                    "img/campana2025/foto15.jpg"
+                ]
+            },  
+            
         ];
 
         eventosPasados.forEach(evento => {
@@ -61,6 +112,24 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryContainer.appendChild(albumSection);
         });
     }
+    
+    // --- LÓGICA PARA EL ZOOM DE IMÁGENES ---
+		const modal = document.getElementById('modal-galeria');
+		const imgGrande = document.getElementById('img-grande');
+		
+		// Escuchar clics en toda la página, pero actuar solo si es una imagen de la galería
+		document.addEventListener('click', (e) => {
+		    // Si el clic es en una imagen dentro de un .photo-item
+		    if (e.target.closest('.photo-item img')) {
+		        modal.classList.add('activo');
+		        imgGrande.src = e.target.src; // Pasa la URL de la imagen pequeña a la grande
+		    } 
+		    // Si el clic es en el modal (fondo) o en el botón de cerrar, se cierra
+		    else if (modal.classList.contains('activo')) {
+		        modal.classList.remove('activo');
+		    }
+		});
+
 
     /* =====================================================
        3. PÁGINA EVENTOS
