@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px; /* Aumentado un poco para las 4 columnas */
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -48,12 +48,7 @@ header {
     margin-bottom: 5px;
 }
 
-.title-wrapper p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-/* Navbar - Dividido en tercios, siempre visible */
+/* Navbar */
 .navbar {
     background-color: #2a5298;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -62,22 +57,14 @@ header {
     z-index: 999;
 }
 
-.nav-container {
-    padding: 0;
-}
-
 .nav-menu {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
-.nav-menu li {
-    flex: 1;
-    text-align: center;
-}
+.nav-menu li { flex: 1; text-align: center; }
 
 .nav-link {
     color: white;
@@ -85,229 +72,75 @@ header {
     padding: 18px 0;
     display: block;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link.active {
     background-color: #1e3c72;
-    transform: scale(1.05);
 }
 
-.nav-link.active {
-    background-color: #1e3c72;
-    font-weight: bold;
-    border-bottom: 4px solid white;
+/* Sección de Tarjetas */
+.admin-section {
+    padding: 50px 0;
+    text-align: center;
 }
 
-/* Main */
-main {
-    padding: 30px 0 50px;
-}
-
-.form-section,
-.postulaciones-section,
-.gallery-section,
-.events-section {
-    background: white;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-h2 {
+.admin-section h2 {
+    font-size: 2.2rem;
     color: #1e3c72;
-    margin-bottom: 20px;
-    font-size: 1.6rem;
-    border-bottom: 3px solid #2a5298;
-    padding-bottom: 8px;
-    text-align: center;
-}
-
-/* Formulario (solo en Inicio) */
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #2a5298;
-    font-size: 1rem;
-}
-
-input[type="text"],
-input[type="tel"],
-input[type="file"],
-select,
-textarea {
-    width: 100%;
-    padding: 14px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border 0.3s;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-    border-color: #2a5298;
-    box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.2);
-}
-
-button {
-    width: 100%;
-    background: #2a5298;
-    color: white;
-    padding: 16px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: #1e3c72;
-}
-
-button:disabled {
-    background: #a0aec0;
-    cursor: not-allowed;
-}
-
-#preview-container {
-    margin-top: 15px;
-    text-align: center;
-}
-
-#preview {
-    max-width: 180px;
-    max-height: 180px;
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #2a5298;
-    display: none;
-}
-
-.postulaciones-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.postulacion-card {
-    background: #f0f4ff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.postulacion-card img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #2a5298;
-    margin-bottom: 15px;
-}
-
-.postulacion-card h3 {
-    color: #1e3c72;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-
-.postulacion-card p {
-    margin: 8px 0;
-    font-size: 1rem;
-    color: #444;
-}
-
-.note {
-    font-style: italic;
-    color: #666;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-/* Galería */
-.gallery-section {
-    text-align: center;
-}
-
-.gallery-intro {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.05);
-}
-
-/* Eventos */
-.events-section {
-    text-align: center;
-}
-
-.events-intro {
-    font-size: 1.1rem;
-    color: #555;
     margin-bottom: 40px;
 }
 
-.events-list {
+/* GRID AJUSTADO A 4 COLUMNAS */
+.admin-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas exactas */
     gap: 25px;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
-.event-card {
+.admin-card {
     background: white;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: left;
-    border-left: 5px solid #2a5298;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.event-card h3 {
-    color: #1e3c72;
+.admin-card:hover {
+    transform: translateY(-10px);
+}
+
+.admin-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2a5298;
     margin-bottom: 15px;
-    font-size: 1.5rem;
 }
 
-.event-card p {
-    margin: 10px 0;
-    color: #444;
+.admin-card h3 {
+    color: #1e3c72;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.admin-card .cargo {
+    font-weight: bold;
+    color: #2a5298;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.admin-card .mensaje {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 /* Footer */
@@ -316,108 +149,192 @@ footer {
     color: white;
     text-align: center;
     padding: 25px 0;
-    font-size: 0.95rem;
+    margin-top: auto;
 }
 
-/* Loader */
-.loader-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-.loader-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.loader {
-    width: 80px;
-    height: 80px;
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #2a5298;
-    border-radius: 50%;
-    animation: spinZoom 1.5s linear infinite;
-}
-
-@keyframes spinZoom {
-    0% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.15) rotate(180deg); }
-    100% { transform: scale(1) rotate(360deg); }
-}
-
-/* Mensaje de éxito */
-.success-message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    padding: 30px 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    font-size: 1.3rem;
-    z-index: 1001;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.6s ease;
-}
-
-.success-message.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) scale(1.05);
-}
-
-.success-message p {
-    margin: 0;
-}
-
-.success-message strong {
-    font-size: 1.5rem;
-    display: block;
-    margin-top: 8px;
-}
-
-/* Media Queries */
-@media (min-width: 576px) {
-    .title-wrapper h1 { font-size: 2.6rem; }
-    .logo { width: 100px; height: 100px; }
-    .postulaciones-list { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-    button { width: auto; padding: 14px 40px; }
-}
-
-@media (min-width: 768px) {
-    .container { padding: 0 30px; }
-    .form-section,
-    .postulaciones-section,
-    .gallery-section,
-    .events-section { padding: 35px; }
-    h2 { font-size: 1.8rem; text-align: left; }
-    .header-content { justify-content: flex-start; }
-    .title-wrapper { text-align: left; }
-    .events-list { grid-template-columns: repeat(2, 1fr); }
+/* Responsividad */
+@media (max-width: 1024px) {
+    .admin-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 768px) {
-    .nav-link { font-size: 1rem; padding: 16px 0; }
+    .admin-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
-    .nav-link { font-size: 0.95rem; padding: 14px 0; }
-    .loader { width: 60px; height: 60px; border-width: 6px; }
-    .success-message { padding: 25px 30px; font-size: 1.1rem; width: 90%; max-width: 350px; }
-    .success-message strong { font-size: 1.3rem; }
+    .admin-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   ESTILOS ADICIONALES PARA LA GALERÍA
+   ========================================= */
+
+/* Estilo para cada bloque de evento/álbum */
+.album-section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 40px; /* Espacio entre un evento y otro */
+    text-align: left;
+    border-top: 3px solid #2a5298;
+}
+
+.album-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.album-title {
+    color: #1e3c72;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.album-date {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Grid específico para las fotos (más denso que el del personal) */
+.photo-grid {
+    display: grid;
+    /* Crea columnas automáticas de mínimo 150px de ancho */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.photo-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 150px; /* Altura fija para uniformidad */
+}
+
+.photo-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para llenar el cuadro sin deformar */
+    display: block;
+}
+
+/* Ajuste para móviles en la galería */
+@media (max-width: 480px) {
+    .photo-grid {
+        /* En celulares, las fotos son un poco más pequeñas para que quepan más */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    }
+    .photo-item {
+        height: 100px;
+    }
+}
+
+/* =========================================
+   ESTILOS PARA LA PÁGINA DE EVENTOS
+   ========================================= */
+
+.events-section {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.divider {
+    margin: 40px 0;
+    border: 0;
+    border-top: 2px dashed #ccc;
+    opacity: 0.5;
+}
+
+/* Grid de 3 columnas para eventos */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* Tarjeta de Evento */
+.event-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-date-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+/* Colores para Próximos vs Pasados */
+.status-upcoming {
+    background-color: #e8f8f5;
+    color: #27ae60; /* Verde esperanza */
+    border: 1px solid #27ae60;
+}
+
+.status-past {
+    background-color: #f2f2f2;
+    color: #7f8c8d; /* Gris */
+    border: 1px solid #bdc3c7;
+}
+
+.event-title {
+    color: #1e3c72;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.event-info {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.event-info i {
+    width: 20px;
+    color: #2a5298;
+    text-align: center;
+}
+
+/* Opacidad visual para eventos pasados */
+.past-section .event-card {
+    opacity: 0.9;
+}
+.past-section .event-card:hover {
+    opacity: 1;
 }
